@@ -3,6 +3,8 @@ bin/
 *.user*
 Makefile*
 
+*.autosave
+
 moc_*
 *.moc
 *.o
