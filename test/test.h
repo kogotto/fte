@@ -14,8 +14,11 @@ public:
 private Q_SLOTS:
     void testMatrixSize();
     void testMatrixSize_data();
-
     void testMatrixAccess();
+
+    void testGraphBaseSymetricEdges();
+    void testGraphBaseSymetricEdges_data();
+    void testGraphBaseFindPath();
 };
 
 #endif // TEST
