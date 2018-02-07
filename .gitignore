@@ -3,6 +3,7 @@ bin/
 *.user*
 Makefile*
 
+moc_*
 *.moc
 *.o
 
