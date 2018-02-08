@@ -22,6 +22,8 @@ private Q_SLOTS:
 
     void testOnlyOneMiss();
     void testOnlyOneMiss_data();
+
+    void testToGraph();
 };
 
 #endif // TEST

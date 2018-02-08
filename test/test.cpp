@@ -151,3 +151,18 @@ void Test::testOnlyOneMiss_data()
                                      << false;
 }
 
+void Test::testToGraph()
+{
+    const Dictionary dictionary{ "toy",
+                                 "boy",
+                                 "bot" };
+    const auto graph = toGraph(dictionary);
+
+    QVERIFY2(graph.hasEdge(0u, 1u), "toy-boy edge");
+    QVERIFY2(graph.hasEdge(1u, 0u), "toy-boy edge");
+    QVERIFY2(!graph.hasEdge(0u, 2u), "toy-bot without edge");
+    QVERIFY2(!graph.hasEdge(2u, 0u), "toy-bot without edge");
+    QVERIFY2(graph.hasEdge(1u, 2u), "boy-bot edge");
+    QVERIFY2(graph.hasEdge(2u, 1u), "boy-bot edge");
+}
+
