@@ -8,6 +8,9 @@
 
 using Dictionary = std::vector<std::string>;
 
+// поиск слова в словаре
+// если найдено возвращает индекс
+// если нет, возвращает dictionary.size()
 inline size_t findIn(const Dictionary & dictionary, const std::string & str) {
     return std::find(dictionary.begin(),
                      dictionary.end(),

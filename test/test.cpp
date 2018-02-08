@@ -16,7 +16,7 @@ void Test::testMatrixSize()
     QFETCH(Matrix, matrix);
     QFETCH(size_t, size);
 
-    QCOMPARE(matrix.size(), size);
+    QCOMPARE(matrix.getSize(), size);
 }
 
 void Test::testMatrixSize_data()

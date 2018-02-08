@@ -10,7 +10,7 @@
 // Количество вершин задается в конструкторе, изменить нельзя
 // Вершины нумеруются с 0 до size() - 1
 // Ребра задаются функцией setEdge(left, right), где left, right - номера вершин
-// findPath - совершает обход графа в ширину и возвращает ветор номеров вершин(путь start-finish)
+// findPath - совершает обход графа в ширину и возвращает вектор номеров вершин(путь start-finish)
 
 class GraphBase {
 public:
@@ -21,7 +21,7 @@ public:
     {}
 
     size_t size() const {
-        return matrix_.size();
+        return matrix_.getSize();
     }
 
     void setEdge(size_t left, size_t right) {

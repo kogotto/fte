@@ -8,6 +8,9 @@
 #include "graphbase.h"
 #include "dictionary.h"
 
+// принимает две строки
+// precondition - стоки равной длины
+// возвращает true только когда они различаются ровно на одну букву
 inline bool onlyOneMiss(const std::string & lhs, const std::string & rhs) {
     const auto size = lhs.size();
     assert(size == rhs.size());
@@ -21,6 +24,9 @@ inline bool onlyOneMiss(const std::string & lhs, const std::string & rhs) {
     return mismatches == 1;
 }
 
+// строит граф из словаря
+// вершины - слова
+// ребрами соединены только те слова, которые различаются ровно на 1 букву
 inline GraphBase toGraph(const Dictionary & dictionary) {
     const auto size = dictionary.size();
     GraphBase result(size);

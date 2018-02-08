@@ -26,9 +26,16 @@ int main(int argc, char *argv[])
     const auto size = start.size();
     assert(size == finish.size());
 
+    // читаем словарь из файла
+    // сразу игнорируем слова неправильной длины
     const auto dictionary = readDictionaryFrom(dictionaryFileName, size);
+
+    // строим граф из словаря
+    // вершины - слова
+    // ребрами соединены только те слова, которые различаются ровно на 1 букву
     const auto graph = toGraph(dictionary);
 
+    // находим путь в графе с помощью алгоритма "обход в ширину"
     auto path = graph.findPath(findIn(dictionary, start),
                                findIn(dictionary, finish));
     print(path, dictionary);
