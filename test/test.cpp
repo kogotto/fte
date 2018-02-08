@@ -2,8 +2,10 @@
 
 #include "matrix.h"
 #include "graphbase.h"
+#include "stringgraph.h"
 
 Q_DECLARE_METATYPE(Matrix);
+Q_DECLARE_METATYPE(std::string);
 
 Test::Test()
 {
@@ -92,5 +94,60 @@ void Test::testGraphBaseFindPath()
         QVERIFY2(graph.hasEdge(path[i], path[i + 1]),
                 "adjacent vertexes in path must has edge");
     }
+}
+
+void Test::testOnlyOneMiss()
+{
+    QFETCH(std::string, left);
+    QFETCH(std::string, right);
+    QFETCH(bool, result);
+
+    QCOMPARE(onlyOneMiss(left, right), result);
+}
+
+void Test::testOnlyOneMiss_data()
+{
+    QTest::addColumn<std::string>("left");
+    QTest::addColumn<std::string>("right");
+    QTest::addColumn<bool>("result");
+
+    QTest::newRow("one miss 1") << std::string("bear")
+                                << std::string("beer")
+                                << true;
+    QTest::newRow("one miss 2") << std::string("toy")
+                                << std::string("boy")
+                                << true;
+    QTest::newRow("one miss 3") << std::string("me")
+                                << std::string("my")
+                                << true;
+    QTest::newRow("one miss 4") << std::string("fuck")   // :D
+                                << std::string("suck")
+                                << true;
+
+    QTest::newRow("equal 1") << std::string("123")
+                             << std::string("123")
+                             << false;
+    QTest::newRow("equal 2") << std::string("cow")
+                             << std::string("cow")
+                             << false;
+    QTest::newRow("equal 3") << std::string("fly")
+                             << std::string("fly")
+                             << false;
+    QTest::newRow("equal 4") << std::string("elefant")
+                             << std::string("elefant")
+                             << false;
+
+    QTest::newRow("more than one 1") << std::string("1234")
+                                     << std::string("5678")
+                                     << false;
+    QTest::newRow("more than one 4") << std::string("beer")
+                                     << std::string("four")
+                                     << false;
+    QTest::newRow("more than one 4") << std::string("as")
+                                     << std::string("me")
+                                     << false;
+    QTest::newRow("more than one 4") << std::string("abstraction")
+                                     << std::string("incapsulati")
+                                     << false;
 }
 

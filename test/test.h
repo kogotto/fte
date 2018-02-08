@@ -19,6 +19,9 @@ private Q_SLOTS:
     void testGraphBaseSymetricEdges();
     void testGraphBaseSymetricEdges_data();
     void testGraphBaseFindPath();
+
+    void testOnlyOneMiss();
+    void testOnlyOneMiss_data();
 };
 
 #endif // TEST
