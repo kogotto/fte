@@ -3,4 +3,3 @@
 
 QTEST_APPLESS_MAIN(Test)
 
-//#include "tst_test.moc"

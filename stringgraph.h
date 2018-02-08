@@ -2,6 +2,7 @@
 #define STRINGGRAPH
 
 #include <string>
+#include <iostream>
 #include <cassert>
 
 #include "graphbase.h"
@@ -35,6 +36,13 @@ inline GraphBase toGraph(const Dictionary & dictionary) {
     }
 
     return result;
+}
+
+void print(const GraphBase::Path & path,
+           const Dictionary & dictionary) {
+    for (const auto & i: path) {
+        std::cout << dictionary[i] << '\n';
+    }
 }
 
 #endif // STRINGGRAPH
