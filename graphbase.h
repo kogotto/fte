@@ -29,7 +29,7 @@ public:
         matrix_.elem(right, left) = 1;
     }
 
-    bool hasEdge(size_t left, size_t right) {
+    bool hasEdge(size_t left, size_t right) const {
         return matrix_.elem(left, right) != 0;
     }
 
