@@ -23,6 +23,8 @@ private Q_SLOTS:
     void testOnlyOneMiss();
     void testOnlyOneMiss_data();
 
+    void testFindIn();
+
     void testToGraph();
 };
 

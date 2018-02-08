@@ -151,6 +151,18 @@ void Test::testOnlyOneMiss_data()
                                      << false;
 }
 
+void Test::testFindIn()
+{
+    const Dictionary dictionary{ "toy",
+                                 "boy",
+                                 "bot" };
+
+    QCOMPARE(findIn(dictionary, "toy"), 0u);
+    QCOMPARE(findIn(dictionary, "boy"), 1u);
+    QCOMPARE(findIn(dictionary, "bot"), 2u);
+    QCOMPARE(findIn(dictionary, "dot"), 3u);
+}
+
 void Test::testToGraph()
 {
     const Dictionary dictionary{ "toy",

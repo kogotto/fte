@@ -2,12 +2,10 @@
 #define STRINGGRAPH
 
 #include <string>
-#include <vector>
 #include <cassert>
 
 #include "graphbase.h"
-
-using Dictionary = std::vector<std::string>;
+#include "dictionary.h"
 
 inline bool onlyOneMiss(const std::string & lhs, const std::string & rhs) {
     const auto size = lhs.size();
