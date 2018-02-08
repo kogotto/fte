@@ -1,0 +1,2 @@
+../bin/fte.exe: ../main.cpp
+	g++ -pipe -O2 -std=c++14 -Wall -Wextra -I.. -o ../bin/fte.exe ../main.cpp
